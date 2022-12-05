@@ -1,0 +1,36 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/version.js
+/dist
+/tmp
+
+# ResHack output
+/log.log
+/res/VERSIONINFO.rc
+/res/VERSIONINFO.res
+/tool/ResourceHacker.ini
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+.classpath
+.project
+.settings/
+*.launch
+*.swp
+
+# misc
+npm-debug.log
+yarn.lock
+yarn-error.log
+package-lock.json
+version_temp_file
+
+#System Files
+._*
+.DS_Store
+Thumbs.db

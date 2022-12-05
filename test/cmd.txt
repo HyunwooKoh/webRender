@@ -1,0 +1,8 @@
+// html file
+mkdir .\test\result | mkdir .\test\Log | npm run start -- --input .\test\data\html.html --output .\data\result\html_output.pdf --cookies .\test\data\res.json --debugMode --delay 30000 --logDir .\test\Log\ 
+// .url file
+mkdir .\test\result | mkdir .\test\Log | npm run start -- --input .\test\data\url.url --output .\data\result\url_output.pdf --cookies .\test\data\res.json --debugMode --delay 30000 --logDir .\test\Log\
+// .url File - including local file path
+mkdir .\test\result | mkdir .\test\Log | npm run start -- --input .\test\data\url_localFile.url --output .\data\result\url_localFile_output.pdf --cookies .\test\data\res.json --debugMode --delay 30000 --logDir .\test\Log\
+// http / https link
+mkdir .\test\result | mkdir .\test\Log | npm run start -- --input=https://www.naver.com/ --output .\data\result\link_output.pdf --cookies .\test\data\res.json --debugMode --delay 30000 --logDir .\test\Log\

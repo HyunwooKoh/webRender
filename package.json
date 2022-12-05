@@ -1,0 +1,33 @@
+{
+  "name": "webrender",
+  "version": "1.1.0",
+  "description": "Web renderer for PG Paris",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prestart": "run-s updateVersion",
+    "start": "electron .",
+    "build": "run-s updateVersion pack postwinbuild",
+    "build:darwin": "run-s updateVersion pack:darwin",
+    "build:windows": "run-s updateVersion pack:windows postwinbuild",
+    "build:linux": "run-s updateVersion pack:linux",
+    "pack": "electron-packager . --out=dist --asar --overwrite --all --ignore=dist",
+    "pack:darwin": "electron-packager . --out=dist --asar --overwrite --platform=darwin --arch=x64 --ignore=dist",
+    "pack:windows": "electron-packager . --out=dist --asar --overwrite --platform=win32 --arch=ia32 --prune \"--ignore=(cache|dist|out|res|setup|tool)\"",
+    "pack:linux": "electron-packager . --out=dist --asar --overwrite --platform=linux --arch=x64 --prune \"--ignore=(cache|dist|out|res|setup|tool)\"",
+    "postwinbuild": "node postWinBuild",
+    "updateVersion": "node updateVersion",
+    "lint": "eslint .",
+    "compress": "cd dist; for file in `ls`; do zip -r -y $file.zip $file; done"
+  },
+  "dependencies": {
+    "electron-args": "^0.1.0",
+    "line-reader": "^0.4.0"
+  },
+  "devDependencies": {
+    "electron": "^13.1.0",
+    "electron-packager": "^15.2.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
